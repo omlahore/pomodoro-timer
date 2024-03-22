@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <section>
+        <audio id="clickSound">
+            <source src="assets/click-sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="container">
+
+            <!-- Add a button for toggling dark mode -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode(); playClickSound()">
+                <img src="assets/moon.png" alt="Moon" id="dark-mode-icon">
+            </button>
+
+            <h1>pomodoro timer</h1>
+
+            <div class="painel">
+                <button id="workButton" class="button active"
+                    onclick="toggleTimer('work'); playClickSound()">work</button>
+                <button id="breakButton" class="button" onclick="startBreakTimer(); playClickSound()">break</button>
+            </div>
+
+
+
+            <div class="timer">
+                <div class="circle">
+
+                    <div class="time">
+                        <p id="minutes"></p>
+                        <p>:</p>
+                        <p id="seconds"></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start" onclick="start(); playClickSound()"><i class="fa-solid fa-play"></i></button>
+                <a id="reset" href="#" onclick="resetTimer(); playClickSound()">
+                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SCRIPT -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
