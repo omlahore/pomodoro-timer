@@ -102,3 +102,31 @@ function resetTimer() {
     document.getElementById('start').style.display = "block";
     document.getElementById('reset').style.display = "none";
 }
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    // Toggle dark mode class on body
+    document.body.classList.toggle('dark-mode');
+
+    // Toggle icon based on dark mode
+    const icon = document.getElementById('dark-mode-icon');
+    const currentIcon = icon.getAttribute('src');
+    const newIcon = currentIcon.includes('moon') ? 'sun.png' : 'moon.png';
+    icon.setAttribute('src', 'assets/' + newIcon);
+
+    // Change background image based on dark mode
+    const body = document.body;
+    const currentBg = body.style.backgroundImage;
+    if (currentBg.includes('bg-night')) {
+        body.style.backgroundImage = "url('assets/bg.jpg')";
+    } else {
+        body.style.backgroundImage = "url('assets/bg-night.jpeg')";
+    }
+}
+
+// Function to play the clicking sound
+function playClickSound() {
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0; // Reset sound to start
+    clickSound.play();
+}
